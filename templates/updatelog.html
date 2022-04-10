@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Mandatory meta tags-->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap Core CSS-->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap" rel="stylesheet">
+
+    <!--Custom CSS-->
+
+    <link rel="stylesheet" href={{url_for('static', filename = 'css/updatelog.css')}}>
+
+    <title>{{ut.name}} | Update Log </title>
+</head>
+
+<body>
+    <!--Navigation Bar-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">QuantifiedSelf</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/{{user_id}}/dashboard"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg> {{u.name}} | Go to Dashboard </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Header Section-->
+
+    <header class="page-header">
+        <div class="container">
+            <div class="row">
+                <h1>{{ut.name}} Tracker</h1>
+                <p>Tracker Type : {{ut.tracker_type}} </p>
+                <b style="font-size:x-large;">Log ID: {{log_id}}</b>
+            </div>
+        </div>
+    </header>
+
+    <!--Tracker Form-->
+
+    <section class="log">
+        <div class="container border-box">
+            <div class="row">
+                <div class="col-md-12 py-3" style="text-align: center;">
+                        <h3>UPDATE LOG</h3>
+                        <p> Please fill in the details to update the logged event.</p>
+                </div>
+            </div>
+            <form action="/{{user_id}}/dashboard/{{tracker_id}}/{{log_id}}/update" method="POST">
+                <div class="row container text-center">
+                    <div class="col-md-6">
+                        <label for="timestamp">Timestamp:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input class = 'form-control mb-4' type="text" id="timestamp" name="timestamp" value="{{log.timestamp}}" />
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-6">
+                        <label for="value">Value:</label>
+                    </div>
+                    {% if flag==1 %}
+                    <div class="col-md-6">
+                        <input class = 'form-control mb-4' type="number" step="any" id="value" name="value" value="{{log.value}}" required/>
+                    </div>
+                    {% endif %}
+                    {% if flag==2 %}
+                    <div class="col-md-6">
+                        <select class = 'form-select form-control mb-4' id="value" name="value">
+                            <option selected>Select</option>
+                            {% for i in l %}
+                            <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    {% endif %}
+                    {% if flag==3 %}
+                    <div class="col-md-6">
+                        <input class = 'form-control mb-4' type="text" id="value" name="value" value="{{log.value}}" required/>
+                    </div>
+                    {% endif %}
+                    <div class="w-100"></div>
+                    <div class="col-md-6">
+                        <label for="note">Notes:</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input class = 'form-control mb-4' type="text" id="note" name="note" value="{{log.note}}">
+                    </div>
+                    <div class="w-100"></div>
+                <div class = 'pt-3 mb-3' style="text-align: center;">
+                    <button type="submit" class="btn btn-outline-success mb-2">Update Log</button>
+                </div>
+            </form>  
+        </div>
+    </section>
+
+    <!--Bootstrap JS-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+html,
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: whitesmoke;
+}
+    
+.navbar-brand{
+    font-size: x-large;
+}
+.page-header{
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+}
+.border-box{
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 15px;
+    width:50%;
+    /*text-align: center;*/
+    padding-top: 2rem;
+    box-shadow: 20px 20px 10px grey;
+}
+.form-control{
+    text-align: center;
+    background-color: white;
+    border-color: black;
+    border-radius: 25px;
+    color: black;
+    display: inline-flex;
+    
+}

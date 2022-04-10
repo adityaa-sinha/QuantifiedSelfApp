@@ -1,0 +1,50 @@
+html,
+body{
+    background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+    font-family: 'Raleway', sans-serif;
+}
+.navbar-brand{
+    font-size: x-large;
+}
+.page-header{
+    padding-top: 8rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.border-box{
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 15px;
+    width: 40%;
+    color: black;
+    text-align: center;
+    padding-top: 2rem;
+    box-shadow: 20px 20px 10px grey;
+}
+.form-control{
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    border-color: black;
+    border-radius: 25px;
+    color: black;
+    display: inline-flex;
+    
+}
+.form-control:focus{
+    color: black;
+}
+.btn{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 25px;
+}
+.login{
+    text-decoration: none;
+}
+hr{
+    width: 80%;
+    display: inline-flex;
+    text-align: center;
+}

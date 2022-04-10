@@ -1,0 +1,50 @@
+html,
+body{
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(246,237,222,1) 97%);
+    font-family: 'Raleway', sans-serif;
+}
+.navbar-brand{
+    font-size: x-large;
+}
+.page-header{
+    padding-top: 8rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+.border-box{
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    border-radius: 15px;
+    width: 40%;
+    text-align: center;
+    padding-top: 2rem;
+    box-shadow: 20px 20px 10px grey;
+}
+.form-control{
+    width: 50%;
+    text-align: center;
+    background-color: white;
+    border-color: black;
+    border-radius: 25px;
+    color: black;
+    display: inline-flex;
+    
+}
+.form-control:focus{
+    color: black;
+}
+.btn{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 25px;
+}
+.signup{
+    text-decoration: none;
+}
+hr{
+    width: 80%;
+    display: inline-flex;
+    text-align: center;
+}

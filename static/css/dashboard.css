@@ -1,0 +1,29 @@
+html,
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: #e2c9be;
+background-image: repeating-linear-gradient(315deg, #e2c9be 0%, #fbf7e9 74%);
+
+
+}
+.navbar-brand{
+    font-size: x-large;
+}
+.page-header{
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    font-size: large;
+}
+.table-title{
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.footer{
+    padding-top: 3rem;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: skyblue;
+}
